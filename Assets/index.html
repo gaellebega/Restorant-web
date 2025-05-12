@@ -11,7 +11,9 @@
     rel="stylesheet"
 />
 <link rel="stylesheet" href="./CSS/styles.css">
-  <title>Document</title>
+  <title>IGB Restorant</title>
+  <script src="https://unpkg.com/scrollreveal"></script>
+
 </head>
 <body>
  
@@ -31,6 +33,7 @@
       <li><a href="#services" class="nav__links ">Services</a></li>
       <li><a href="#menu" class="nav__links ">Menu</a></li>
       <li><a href="#contact" class="nav__links">Contacts</a></li>
+      <i class="ri-contrast-2-line change-theme" id="theme-button"></i>
     </ul>
   
   </div>
@@ -55,13 +58,13 @@
       <section class="about section bd-container" id="about">
         <div class="about__container bd-grid ">
           <div class="about__data">
-          <span class="section-subtitle">About us</span>
-          <h2 class="section-title">We coook the best<br>tasty foood</h2>
+          <span class="section-subtitle about__initial">About us</span>
+          <h2 class="section-title about__initial">We coook the best<br>tasty foood</h2>
           <p class="about__dispcription">We ccok the best food in the entire world with the nest customers</p>
           <a href="#" class="button">Explore history</a>
          </div>
         </div>
-        <img src="./img/g2.png" alt="">
+        <img src="./img/g2.png" alt="" class="about__img">
       </section>
       <!-- SERVICES -->
        <section class="services bd-container " id="services">
@@ -117,8 +120,9 @@
 <section class="app section bd-container">
 <div class="app__container bd-grid">
   <div class="app__data">
-<span class="section-subtitle">App is Available</span>
-<h2 class="section-title">Find this application anywhere ry to rach out on us anytime you want we are available to help you feel satisfied!</h2>
+    <span class="section-subtitle app__initial">App</span>
+<h2 class="section-title  app__initial">App is Available</h2>
+<p class="app__descripiton">Find this application anywhere ry to rach out on us anytime you want we are available to help you feel satisfied!</p>
 <div class="app__stores">
   <a href="#"><img src="./img/Black_Get_It_On_Google_Play_Button_Transparent_Background-removebg-preview.png" alt="" class="app__store"></a>
   <a href="#"><img src="./img/App_Store_Logo_-_App_Store_Icon_White_PNG_Transparent_With_Clear_Background_ID_165964___TopPNG-removebg-preview.png" alt="" class="app__store"></a>
@@ -128,9 +132,61 @@
 </div>
 
 </section>
+<section class="contact section bd-container" id="contact">
+  <div class="contact__container bd-grid">
+    <div class="contact__data">
+      <span class="section-subtittle coantact__initial" style="color: rgb(14, 121, 14);">Let us Talk</span>
+      <h2 class="section-title coantact__initial">Contact Us</h2>
+      <p class="contact__description">If you want to tell us something feel free to reach out to us so that we can satisfy what you need</p>
+    </div>
+    <div class="contact__button"><a href="" class="button">contact us</a></div>
+  </div>
+</section>
   </main>
   <footer class="footer section bd-container">
+<div class="footer__contianer bd-grid">
+  <div class="footer__content">
+    <a href="#" class="footer__logo">TastyFood</a>
+ <span class="footer__description">Restorant</span>
+ <div>
+  <a href="#" class="footer__social"><i class="ri-facebook-line"></i></a>
+  <a href="#" class="footer__social"><i class="ri-instagram-line"></i></a>
+  <a href="#" class="footer__social"><i class="ri-snapchat-line"></i></a>
+  <a href="#" class="footer__social"><i class="ri-twitter-line"></i></a>
 
+ </div>
+  </div>
+  <div class="footer__content">
+    <h3 class="footer__title">Services</h3>
+    <ul>
+      <li><a href="#" class="footer__link">Delivery</a></li>
+      <li><a href="#" class="footer__link">Pricing</a></li>
+      <li><a href="#" class="footer__link">Fast Food</a></li>
+      <li><a href="#" class="footer__link">Reserve your spot</a></li>
+    </ul>
+  </div>
+
+  <div class="footer__content">
+    <h3 class="footer__title">Information</h3>
+    <ul>
+      <li><a href="#" class="footer__link">Event</a></li>
+      <li><a href="#" class="footer__link">Contact Us</a></li>
+      <li><a href="#" class="footer__link">Privacy Policy</a></li>
+      <li><a href="#" class="footer__link">Terms of Services</a></li>
+    </ul>
+  </div>
+
+  <div class="footer__content">
+    <h3 class="footer__title">Address</h3>
+    <ul>
+      <li>Lima - Peru</li>
+      <li>Jr Union #999</li>
+      <li>999 - 888 777</li>
+      <li>tastyfood@gmail.com</li>
+    </ul>
+  </div>
+</div>
+<p class="footer__copy">&#169; 2025 IGB web. All right reserved.</p>
   </footer>
   <script  src="./Js/main.js"></script>
 </body>

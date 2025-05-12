@@ -60,3 +60,54 @@ function scrollTop(){
   else scrollTop.classList.remove('scroll-top');
 }
 window.addEventListener('scroll',scrollTop)
+
+//dark theme
+
+const themeButton = document.getElementById("theme-button")
+const darkTheme = 'dark-theme'
+const iconTheme = "ri-contrast-2-line" 
+
+
+//previously selcted topic if user selected
+const selectedTheme = localStorage.getItem('slected-theme')
+const selectedIcon = localStorage.getItem('slected-icon')
+
+//we obtain the current theme that the interface has by validating the dark-theme click
+
+const getCurrentTheme = () => document.body.classList.contains(darkTheme)? 'dark':'light'
+const getCurrentIcon = () => document.body.classList.contains(iconTheme)? 'bx-moon':'bx-sun'
+
+//validate if the user previously choose a topic
+if (selectedTheme){
+document.body.classList[selectedTheme === 'dark'? 'add':'remove'](darkTheme)
+document.body.classList[selectedIcon === 'bx-moon'? 'add':'remove'](iconTheme)
+}
+
+//the validation is fulfilled, we ask the issue was to know if we activate or deactivate the dark
+
+
+//activate and deactivate the theme manually with the butto 
+
+themeButton.addEventListener("click",()=>{
+  document.body.classList.toggle(darkTheme)
+  themeButton.classList.toggle(iconTheme)
+  //we save the themeand the 
+  localStorage.setItem('selected-theme',getCurrentTheme())
+  localStorage.setItem('selected-icon',getCurrentIcon())
+})
+window.addEventListener('load', () => {
+const sr = ScrollReveal({
+  origin:'top',
+  distance: '30px',
+  duration:2000,
+  reset: true
+});
+sr.reveal(`.home__data, .home__img,
+  .about__data, .about__img,
+   .service__content,.menu__content,
+   .app__data,.app__container, 
+   .contact__data, .contact__button, 
+   .footer__content`,{
+  interval:200
+})
+})

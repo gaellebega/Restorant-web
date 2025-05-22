@@ -7,6 +7,7 @@
     font-style: normal;
   }
 :root{
+  --header-height:3rem;
   --header-color: #069c54;
   --first-color: #17ba6b;
   --first-color-alt: #048654;
@@ -17,29 +18,29 @@
   --container-color:#FFFF;
 
   /* Fonts and typography */
-  --body-font:"poppins",sans-serif;
+  --body-font:"poppins", sans-serif;
   --biggest-font-size: 2.25rem;
   --h1-font-size: 1.5rem;
   --h2-font-size: 1.25rem;
   --h3-font-size: 1rem;
   --noraml-font-size: .938rem;
   --small-font-size: .813rem;
-  --smaller-font-size: .7rem;
+  --smaller-font-size: .75rem;
   --font-medium: 500;
   --font-semi-bold: 600;
 
   /* Margins */
 
-  --mb-1:.5rem;
-  --mb-2:1rem;
-  --mb-3:1.5rem;
-  --mb-4:2rem;
-  --mb-5:2.5rem;
-  --mb-6:3rem;
+  --mb-1: .5rem;
+  --mb-2: 1rem;
+  --mb-3: 1.5rem;
+  --mb-4: 2rem;
+  --mb-5: 2.5rem;
+  --mb-6: 3rem;
 
   /* Z-indexes */
-  --z-tooltip:10;
-  --z-fixed:100;
+  --z-tooltip: 10;
+  --z-fixed: 100;
 }
   /* Responsiveness */
   @media screen and (min-width:768px) {
@@ -51,7 +52,6 @@
   --noraml-font-size:1rem;
   --small-font-size:.875rem;
   --smaller-font-size:.813rem;
-
 }
 }
 /* BASE */
@@ -61,6 +61,7 @@
 html{
   scroll-behavior: smooth;
 }
+
 body.dark-theme{
   --title-color:#F1F3F2;
   --text-color:#C7D1CC;
@@ -89,7 +90,7 @@ margin:0;
 }
 ul{
   padding:0;
-  list-style:none;
+  list-style: none;
 }
 
 a{
@@ -119,10 +120,10 @@ img{
 }
 /* Layout */
 .bd-container{
-  max-width:860px;
+  max-width: 960px;
   width:calc(100% - 2rem);
-  margin-left:var(--mb-2);
-  margin-right:var(--mb-2)
+  margin-left: var(--mb-2);
+  margin-right: var(--mb-2)
 }
 .bd-grid{
   display:grid;
@@ -137,18 +138,21 @@ img{
   background-color: var(--body-color);
 }
 .nav{
-  max-width:1024px;
+  max-width: 1024px;
   height:var(--header-height);
   display: flex;
-  flex-direction: row;
+  /* flex-direction: row; */
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 4px;
+  /* gap:2px; */
+  /* margin-bottom: 4px; */
+}
+.nav__list{
+  gap:1.5rem;
 }
 
 @media screen and (max-width:768px){
   .nav__menu{
-    
     position:fixed;
     top:-100%;
     left:0;
@@ -156,13 +160,14 @@ img{
     padding:1.5rem 0 1rem;
     text-align: center;
     background-color: var(--body-color);
-    transition:4s;
+    transition: .4s;
     box-shadow:0 4px 4px rgba(0,0,0,.1);
     border-radius:0 0 1rem 1rem;
     z-index: var(--z-fixed);
   }
 }
-.nav__items{
+
+.nav__item{
   margin-bottom:var(--mb-2);
 }
 .nav__links, .nav__logo, .nav__toggle{
@@ -224,8 +229,14 @@ font-weight: var(--font-medium);
 } */
 
 .home__container{
-  height:calc(100vh - var(--header-height));
-  align-content:center;
+  height: calc(100vh - var(--header-height));
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* two columns side by side */
+  align-items: center;            /* vertical center */
+  gap: 1rem;
+  margin-left: 36px;
+  padding-top: 0;
+  
 }
 /* Buttons */
 .home__tittle{
@@ -235,14 +246,16 @@ font-weight: var(--font-medium);
 }
 /* About */
 .home__subtittle{
-  font-size:var(--h2-font-size);
+  font-size:var(--h1-font-size);
   color:var(--title-color);
   margin-bottom: var(--mb-1);
 }
-.home__img{
-  width:300px;
+.home__img {
+  width: 300px;
   justify-self: center;
+  margin-top: 0; /* no negative margin! */
 }
+
 .button{
   display: inline-block;
   background-color: var(--first-color);
@@ -396,7 +409,7 @@ font-weight: var(--font-medium);
 }
 @media screen and (min-width:576px){
   .home__container,.about__container, .app__container{
-    grid-template-columns: repeat(2,1fr);
+    grid-template-columns: repeat(2, 1fr);
     align-items:center;
   }
   .about__data, .about__initial, .app__data, .app__initial, .contact__container, .contact__initial{
@@ -440,8 +453,13 @@ body{
   margin-left: var(--mb-2);
 }
 .home__container{
-  height:100vh;
-  justify-items:center;
+  height: 100vh;
+  grid-template-columns: 1fr; /* single column */
+  align-items: start;         /* align items top */
+  justify-items: center;      /* center horizontally */
+  padding-top: 84px;          /* your desired top padding */
+  margin-left: 16px;          /* smaller left margin */
+  margin-right: 16px;   
 }
 .services__container,.menu__contianer{
   margin-top: var(--mb-6);
